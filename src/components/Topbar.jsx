@@ -1,0 +1,55 @@
+import { Box, IconButton } from "@mui/material";
+import { useContext } from "react";
+import InputBase from "@mui/material/InputBase";
+import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
+import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
+import SearchIcon from "@mui/icons-material/Search";
+import logo from "../assets/Logo.svg";
+
+const Topbar = () => {
+  return (
+    <Box
+      display="flex"
+      justify-content="flex-end"
+      p={2}
+      marginLeft={150}
+      height={30}
+      // boxShadow={4}
+      // width={100}
+    >
+      {/* Logo */}
+      <Box
+        display="flex"
+        marginLeft={-120}
+        marginRight={120}
+        p={0.5}
+        backgroundColor="#B4B8F9"
+        borderRadius={1}
+        component="img"
+        alt="Logo"
+        src={logo}
+      />
+
+      {/* Search Bar */}
+      <Box display="flex" backgroundColor=" #f2f0f0" borderRadius="3px">
+        <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
+        <IconButton type="button" sx={{ p: 1 }}>
+          <SearchIcon />
+        </IconButton>
+      </Box>
+
+      {/* Icons  */}
+      <Box display="flex" marginLeft={15}>
+        <IconButton>
+          <NotificationsOutlinedIcon />
+        </IconButton>
+
+        <IconButton>
+          <PersonOutlinedIcon />
+        </IconButton>
+      </Box>
+    </Box>
+  );
+};
+
+export default Topbar;
