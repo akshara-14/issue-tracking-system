@@ -10,9 +10,10 @@ const Topbar = () => {
   return (
     <Box
       display="flex"
+      position="fixed"
       justify-content="flex-end"
       p={2}
-      marginLeft={150}
+      marginLeft={170}
       height={30}
       // boxShadow={4}
       // width={100}
@@ -20,9 +21,10 @@ const Topbar = () => {
       {/* Logo */}
       <Box
         display="flex"
-        marginLeft={-120}
-        marginRight={120}
+        marginLeft={-140}
+        marginRight={125}
         p={0.5}
+        position="fixed"
         backgroundColor="#B4B8F9"
         borderRadius={1}
         component="img"
