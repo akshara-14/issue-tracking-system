@@ -45,9 +45,8 @@ const Create = () => {
             <Box
               display="grid"
               gap="30px"
-              // paddingRight="300px"
-              // paddingLeft="300px"
               gridTemplateColumns="repeat(4,minmax(0,1fr))"
+              width="300%"
               sx={{
                 "&>div": { gridColumn: isNonMobile ? undefined : "span 4" },
               }}
@@ -219,7 +218,7 @@ const Create = () => {
                 sx={{ gridColumn: "span 2" }}
               />
             </Box>
-            <Box display="flex" justifyContent="end" mt="20px">
+            <Box display="flex" justifyContent="end" mt="20px" width="300%">
               <Button type="submit" variant="contained">
                 Submit
               </Button>
