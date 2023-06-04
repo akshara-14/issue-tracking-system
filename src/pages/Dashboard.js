@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import Header from "../components/Header";
 import Chart from "../components/Chart";
+// import IssueCard from "../components/IssueCard";
 
 const Dashboard = () => {
   return (
@@ -11,6 +12,7 @@ const Dashboard = () => {
       <Box height="20px" width="200%" m="230px" marginTop="80px">
         <Chart />
       </Box>
+      {/* <IssueCard title="Card Title" body="" /> */}
     </Box>
   );
 };
