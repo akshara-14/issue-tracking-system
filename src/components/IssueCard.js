@@ -6,32 +6,61 @@ import { v4 } from "uuid";
 
 const item = {
   id: v4(),
-  name: "fix bug",
+  name: "Fix Bug",
 };
 
 const item2 = {
   id: v4(),
-  name: "improve css",
+  name: "Improve CSS",
 };
 
 function IssueCard() {
   const [state, setState] = useState({
     todo: {
       title: "To Do",
-      items: [item],
+      items: [item, item2],
     },
     "in-progress": {
       title: "In Progress",
-      items: [item2],
+      items: [],
     },
     done: {
       title: "Done",
       items: [],
     },
   });
+
+  const handleDragEnd = ({ destination, source }) => {
+    console.log("from", source);
+    console.log("to", destination);
+    if (!destination) {
+      console.log("not dropped in droppable");
+      return;
+    }
+    if (
+      destination.index === source.index &&
+      destination.droppableId === source.droppableId
+    ) {
+      console.log("dropped in same place");
+      return;
+    }
+
+    const itemCopy = { ...state[source.droppableId].items[source.index] };
+
+    setState((prev) => {
+      prev = { ...prev };
+      prev[source.droppableId].items.splice(source.index, 1);
+      prev[destination.droppableId].items.splice(
+        destination.index,
+        0,
+        itemCopy
+      );
+      return prev;
+    });
+  };
   return (
     <div className="issue-card">
-      <DragDropContext onDragEnd={(e) => console.log(e)}>
+      <DragDropContext onDragEnd={handleDragEnd}>
         {_.map(state, (data, key) => {
           return (
             <div key={key} className={"column"}>
@@ -44,7 +73,7 @@ function IssueCard() {
                       {...provided.droppableProps}
                       className={"droppable-column"}
                     >
-                      {data.items.map((el: T, index: number) => {
+                      {data.items.map((el, index) => {
                         return (
                           <Draggable
                             key={el.id}
@@ -54,6 +83,7 @@ function IssueCard() {
                             {(provided) => {
                               return (
                                 <div
+                                  className="item"
                                   ref={provided.innerRef}
                                   {...provided.draggableProps}
                                   {...provided.dragHandleProps}
@@ -65,6 +95,7 @@ function IssueCard() {
                           </Draggable>
                         );
                       })}
+                      {provided.placeholder}
                     </div>
                   );
                 }}
