@@ -4,6 +4,7 @@ import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../components/Header";
 import { type } from "@testing-library/user-event/dist/type";
+import { saveAs } from "file-saver";
 
 const initialValues = {
   title: "",
@@ -27,6 +28,9 @@ const Create = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
   const handleFormSubmit = (values) => {
     console.log(values);
+    const jsonData = JSON.stringify(values, null, 2);
+    const blob = new Blob([jsonData], { type: "application/json" });
+    saveAs(blob, "form-data.json");
   };
   return (
     <Box m="300px" left="233px" marginTop="150px">
