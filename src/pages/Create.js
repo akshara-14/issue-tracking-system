@@ -5,7 +5,7 @@ import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../components/Header";
 import { type } from "@testing-library/user-event/dist/type";
-// import { saveAs } from "file-saver";
+import { v4 } from "uuid";
 
 const initialValues = {
   title: "",
@@ -23,6 +23,7 @@ const initialValues = {
   description: "",
   storypoints: "",
   attachment: "",
+  // id: v4(),
 };
 
 const Create = () => {
@@ -30,11 +31,10 @@ const Create = () => {
   const handleFormSubmit = (values, { resetForm }) => {
     console.log(values);
     const jsonData = JSON.stringify(values, null, 2);
-    // const blob = new Blob([jsonData], { type: "application/json" });
-    // saveAs(blob, "form-data.json");
-    localStorage.setItem("data", jsonData);
+    localStorage.setItem(values.id, jsonData);
     resetForm({ values: "" });
   };
+
   return (
     <Box m="300px" left="233px" marginTop="150px">
       <Header title="Create" />
@@ -68,7 +68,6 @@ const Create = () => {
                 value={values.title}
                 name="title"
                 sx={{ gridColumn: "span 4" }}
-                // paddingRight="300px"
               />
               <TextField
                 fullWidth
