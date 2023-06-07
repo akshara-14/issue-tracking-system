@@ -30,8 +30,9 @@ const Create = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
   const handleFormSubmit = (values, { resetForm }) => {
     console.log(values);
+    const id = v4();
     const jsonData = JSON.stringify(values, null, 2);
-    localStorage.setItem(values.id, jsonData);
+    localStorage.setItem(id, jsonData);
     resetForm({ values: "" });
   };
 

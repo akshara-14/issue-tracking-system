@@ -3,10 +3,10 @@ import Header from "../components/Header";
 import Chart from "../components/Chart";
 // import IssueCard from "../components/IssueCard";
 import Details from "./Details";
-import { v4 } from "uuid";
+// import { v4 } from "uuid";
 
 const Dashboard = () => {
-  const uniqueId = v4();
+  // const uniqueId = v4();
   return (
     <Box m="20px">
       <Box display="flex" justifyContent="space-between" alignItems="center">
@@ -19,7 +19,7 @@ const Dashboard = () => {
       <Box m="300px" marginTop="500px">
         {" "}
         {/* {localStorage.getItem(id)} */}
-        <Details id={uniqueId} />
+        <Details />
       </Box>
     </Box>
   );
