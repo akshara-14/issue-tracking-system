@@ -12,7 +12,7 @@ function App() {
       <Router>
         <MySideNav />
         <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/" element={<Dashboard />} />
           <Route path="/issues" element={<Issues />} />
           <Route path="/create" element={<Create />} />
         </Routes>

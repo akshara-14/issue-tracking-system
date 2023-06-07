@@ -13,6 +13,10 @@ const Dashboard = () => {
         <Chart />
       </Box>
       {/* <IssueCard title="Card Title" body="" /> */}
+      <Box m="300px" marginTop="500px">
+        {" "}
+        {localStorage.getItem("data")}
+      </Box>
     </Box>
   );
 };

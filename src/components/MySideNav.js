@@ -20,8 +20,8 @@ function MySideNav() {
       className="mysidenav"
     >
       {/* <SideNav.Toggle /> */}
-      <SideNav.Nav defaultSelected="dashboard">
-        <NavItem eventKey="dashboard">
+      <SideNav.Nav defaultSelected="">
+        <NavItem eventKey="">
           {/* <NavIcon></NavIcon> */}
           <NavText>Dashboard</NavText>
         </NavItem>

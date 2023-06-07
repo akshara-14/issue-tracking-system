@@ -1,10 +1,11 @@
+import React, { useState, useEffect } from "react";
 import { Box, Button, TextField } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../components/Header";
 import { type } from "@testing-library/user-event/dist/type";
-import { saveAs } from "file-saver";
+// import { saveAs } from "file-saver";
 
 const initialValues = {
   title: "",
@@ -29,8 +30,9 @@ const Create = () => {
   const handleFormSubmit = (values) => {
     console.log(values);
     const jsonData = JSON.stringify(values, null, 2);
-    const blob = new Blob([jsonData], { type: "application/json" });
-    saveAs(blob, "form-data.json");
+    // const blob = new Blob([jsonData], { type: "application/json" });
+    // saveAs(blob, "form-data.json");
+    localStorage.setItem("data", jsonData);
   };
   return (
     <Box m="300px" left="233px" marginTop="150px">
