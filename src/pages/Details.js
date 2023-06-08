@@ -7,8 +7,14 @@ const Details = () => {
   let issues = Object.values(formValuesJson);
 
   issues.forEach((issues) => console.log(issues));
-
-  return <div></div>;
+  console.log(issues.length);
+  return (
+    <div>
+      {issues.map((values) => (
+        <div>{values}</div>
+      ))}
+    </div>
+  );
 };
 
 export default Details;

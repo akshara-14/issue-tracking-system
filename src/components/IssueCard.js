@@ -13,20 +13,24 @@ const item2 = {
   id: v4(),
   name: "Improve CSS",
 };
+const item3 = {
+  id: v4(),
+  name: "make component",
+};
 
 function IssueCard() {
   const [state, setState] = useState({
     todo: {
       title: "To Do",
-      items: [item, item2],
+      items: [],
     },
     "in-progress": {
       title: "In Progress",
-      items: [],
+      items: [item, item2],
     },
     done: {
       title: "Done",
-      items: [],
+      items: [item3],
     },
   });
 
