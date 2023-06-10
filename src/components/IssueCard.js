@@ -3,8 +3,13 @@ import "./IssueCard.css";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import _ from "lodash";
 import { v4 } from "uuid";
+import Card from "./Card";
+import Details from "../pages/Details";
 
-const item = {
+// const i = () => {
+//   <Details />;
+// };
+const item1 = {
   id: v4(),
   name: "Fix Bug",
 };
@@ -26,7 +31,7 @@ function IssueCard() {
     },
     "in-progress": {
       title: "In Progress",
-      items: [item, item2],
+      items: [],
     },
     done: {
       title: "Done",
@@ -93,6 +98,7 @@ function IssueCard() {
                                   {...provided.dragHandleProps}
                                 >
                                   {el.name}
+                                  {/* <Details /> */}
                                 </div>
                               );
                             }}

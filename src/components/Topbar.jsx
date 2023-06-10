@@ -5,6 +5,7 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import logo from "../assets/Logo.svg";
+import Searchbar from "./Searchbar";
 
 const Topbar = () => {
   return (
@@ -34,10 +35,11 @@ const Topbar = () => {
 
       {/* Search Bar */}
       <Box display="flex" backgroundColor=" #f2f0f0" borderRadius="3px">
-        <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
-        <IconButton type="button" sx={{ p: 1 }}>
+        {/* <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" /> */}
+        {/* <IconButton type="button" sx={{ p: 1 }}>
           <SearchIcon />
-        </IconButton>
+        </IconButton> */}
+        <Searchbar />
       </Box>
 
       {/* Icons  */}

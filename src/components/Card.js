@@ -1,7 +1,6 @@
 import "./Card.css";
 
 function Card({ data }) {
-  //   const title = "Heading";
   return (
     <div className="card-container">
       <div className="card-title">

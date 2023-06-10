@@ -1,0 +1,17 @@
+.dropdown {
+  background-color: white;
+  margin-top: -23px;
+  /* display: flex; */
+  border: 2px solid rgb(200, 194, 194);
+  border-radius: 4px;
+}
+
+.dropdown:empty {
+  border: none;
+}
+
+.dropdown-row {
+  cursor: pointer;
+  text-align: start;
+  margin: 2px 0;
+}

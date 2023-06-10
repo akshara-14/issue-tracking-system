@@ -1,4 +1,4 @@
-.card-container {
+/* .card-container {
   box-sizing: border-box;
 
   position: relative;
@@ -10,7 +10,7 @@
   background: #ffffff;
   border: 1.02994px solid #e8e8e8;
   box-shadow: inset 0px 0px 1.02994px 1.02994px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .issue-card {
   display: flex;

@@ -2,7 +2,7 @@ import Card from "../components/Card";
 
 const Details = () => {
   const formValuesJson = { ...localStorage };
-  console.log(formValuesJson);
+  // console.log(formValuesJson);
   // const formValues = JSON.parse(formValuesJson);
   console.log("data saved");
   // console.log(Object.keys(formValuesJson));
@@ -10,8 +10,32 @@ const Details = () => {
 
   issues.forEach((issue) => console.log(JSON.parse(issue).title));
   // console.log(issues.length);
+  var toDoArr = [];
+  var inProgArr = [];
+  var doneArr = [];
+  issues.map((val) => {
+    if (JSON.parse(val).status === "In Progress") {
+      inProgArr.push(
+        <Card key="{JSON.parse(val).title}" data={JSON.parse(val)} />
+      );
+    } else if (JSON.parse(val).status === "Done") {
+      doneArr.push(
+        <Card key="{JSON.parse(val).title}" data={JSON.parse(val)} />
+      );
+    } else {
+      toDoArr.push(
+        <Card key="{JSON.parse(val).title}" data={JSON.parse(val)} />
+      );
+    }
+  });
+  // console.log(toDoArr);
+  // console.log("hiiiiiiiiii");
+  // console.log(inProgArr);
   return (
     <div>
+      {/* <Card {...toDoArr} />
+      <Card {...inProgArr} />
+      <Card {...doneArr} /> */}
       <div>
         {issues.map((val) => (
           <div>

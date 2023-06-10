@@ -11,12 +11,11 @@ const Dashboard = () => {
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="Dashboard" />
       </Box>
-      <Box height="20px" width="160%" m="230px" marginTop="80px">
+      <Box height="20px" width="1500px" m="230px" marginTop="80px">
         <Chart />
       </Box>
       {/* <IssueCard title="Card Title" body="" /> */}
       <Box m="300px" marginTop="500px">
-        {" "}
         <Details />
       </Box>
       {/* <Box>

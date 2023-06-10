@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import Header from "../components/Header";
 import IssueCard from "../components/IssueCard";
+import Details from "./Details";
 
 const Issues = () => {
   return (
@@ -11,6 +12,9 @@ const Issues = () => {
       <Box height="25px">
         <IssueCard />
       </Box>
+      {/* <Box m="300px" marginTop="180px">
+        <Details />
+      </Box> */}
     </Box>
   );
 };

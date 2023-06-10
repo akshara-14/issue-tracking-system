@@ -3,7 +3,7 @@
 
   position: relative;
   width: 494px;
-  height: 1px;
+  height: 172px;
   left: 2px;
   top: 0px;
 
@@ -13,9 +13,10 @@
 }
 .card-title {
   position: relative;
-  width: 323.4px;
+  /* width: 323.4px;
   height: 34px;
-  left: 20.6px;
+  left: 20.6px; */
+  justify-content: center;
   top: 3px;
 
   font-family: "Inter";

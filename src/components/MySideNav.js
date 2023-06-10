@@ -28,12 +28,12 @@ function MySideNav() {
 
         <NavItem eventKey="issues">
           {/* <NavIcon></NavIcon> */}
-          <NavText className="text">Issues</NavText>
+          <NavText className="text">Issue List</NavText>
         </NavItem>
 
         <NavItem eventKey="create">
           {/* <NavIcon></NavIcon> */}
-          <NavText>Create</NavText>
+          <NavText>Create Issue</NavText>
         </NavItem>
       </SideNav.Nav>
     </SideNav>
