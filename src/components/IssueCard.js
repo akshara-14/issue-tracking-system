@@ -4,38 +4,55 @@ import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import _ from "lodash";
 import { v4 } from "uuid";
 import Card from "./Card";
-import Details from "../pages/Details";
 
-// const i = () => {
-//   <Details />;
+// const item1 = {
+//   id: v4(),
+//   name: "Fix Bug",
 // };
-const item1 = {
-  id: v4(),
-  name: "Fix Bug",
-};
-
-const item2 = {
-  id: v4(),
-  name: "Improve CSS",
-};
-const item3 = {
-  id: v4(),
-  name: "make component",
-};
 
 function IssueCard() {
+  const formValuesJson = { ...localStorage };
+  let issues = Object.values(formValuesJson);
+
+  var toDoArr = [];
+  var inProgArr = [];
+  var doneArr = [];
+  issues.map((val) => {
+    if (JSON.parse(val).status === "In Progress") {
+      inProgArr.push({
+        id: v4(),
+        component: [
+          <Card key="{JSON.parse(val).title}" data={JSON.parse(val)} />,
+        ],
+      });
+    } else if (JSON.parse(val).status === "Done") {
+      doneArr.push({
+        id: v4(),
+        component: [
+          <Card key="{JSON.parse(val).title}" data={JSON.parse(val)} />,
+        ],
+      });
+    } else {
+      toDoArr.push({
+        id: v4(),
+        component: [
+          <Card key="{JSON.parse(val).title}" data={JSON.parse(val)} />,
+        ],
+      });
+    }
+  });
   const [state, setState] = useState({
     todo: {
       title: "To Do",
-      items: [],
+      items: toDoArr,
     },
     "in-progress": {
       title: "In Progress",
-      items: [],
+      items: inProgArr,
     },
     done: {
       title: "Done",
-      items: [item3],
+      items: doneArr,
     },
   });
 
@@ -67,6 +84,7 @@ function IssueCard() {
       return prev;
     });
   };
+
   return (
     <div className="issue-card">
       <DragDropContext onDragEnd={handleDragEnd}>
@@ -96,9 +114,11 @@ function IssueCard() {
                                   ref={provided.innerRef}
                                   {...provided.draggableProps}
                                   {...provided.dragHandleProps}
+                                  // {...console.log({
+                                  //   ...provided.draggableProps,
+                                  // })}
                                 >
-                                  {el.name}
-                                  {/* <Details /> */}
+                                  {el.component}
                                 </div>
                               );
                             }}

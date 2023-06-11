@@ -8,7 +8,7 @@ const Details = () => {
   // console.log(Object.keys(formValuesJson));
   let issues = Object.values(formValuesJson);
 
-  issues.forEach((issue) => console.log(JSON.parse(issue).title));
+  // issues.forEach((issue) => console.log(JSON.parse(issue).title));
   // console.log(issues.length);
   var toDoArr = [];
   var inProgArr = [];
@@ -29,8 +29,8 @@ const Details = () => {
     }
   });
   // console.log(toDoArr);
-  // console.log("hiiiiiiiiii");
   // console.log(inProgArr);
+  // console.log(doneArr);
   return (
     <div>
       {/* <Card {...toDoArr} />
