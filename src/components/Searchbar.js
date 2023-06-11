@@ -14,7 +14,7 @@ const Searchbar = () => {
 
   const onSearch = (searchTerm) => {
     setValue(searchTerm);
-    console.log("search", searchTerm);
+    // console.log("search", searchTerm);
   };
   const formValuesJson = { ...localStorage };
 

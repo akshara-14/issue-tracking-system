@@ -1,13 +1,22 @@
+import { useState } from "react";
 import { Box, IconButton } from "@mui/material";
-import { useContext } from "react";
-import InputBase from "@mui/material/InputBase";
+// import InputBase from "@mui/material/InputBase";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import SearchIcon from "@mui/icons-material/Search";
+// import SearchIcon from "@mui/icons-material/Search";
 import logo from "../assets/Logo.svg";
 import Searchbar from "./Searchbar";
+import Logout from "@mui/icons-material/Logout";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import MenuItem from "@mui/material/MenuItem";
+// import Menu from "@mui/material/Menu";
 
 const Topbar = () => {
+  const [open, setOpen] = useState(false);
+  const handleClick = () => {
+    // localStorage.clear();
+    window.location.reload();
+  };
   return (
     <Box
       display="flex"
@@ -49,9 +58,26 @@ const Topbar = () => {
         </IconButton>
 
         <IconButton>
-          <PersonOutlinedIcon />
+          <PersonOutlinedIcon onClick={() => setOpen(!open)} />
         </IconButton>
       </Box>
+      {open && (
+        <Box
+          backgroundColor="#CCCCCC"
+          p={1.5}
+          marginTop={4}
+          marginLeft={-19}
+          height={30}
+          borderRadius={1}
+        >
+          <MenuItem onClick={(() => setOpen(!open)) && handleClick}>
+            <ListItemIcon>
+              <Logout fontSize="small" />
+            </ListItemIcon>
+            Logout
+          </MenuItem>
+        </Box>
+      )}
     </Box>
   );
 };
