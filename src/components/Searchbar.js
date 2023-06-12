@@ -4,8 +4,10 @@ import SearchIcon from "@mui/icons-material/Search";
 import { Box, IconButton } from "@mui/material";
 import { v4 } from "uuid";
 import "./Searchbar.css";
+import { useNavigate } from "react-router-dom";
 
 const Searchbar = () => {
+  let navigate = useNavigate();
   const [value, setValue] = useState("");
 
   const onChange = (event) => {
@@ -15,6 +17,15 @@ const Searchbar = () => {
   const onSearch = (searchTerm) => {
     setValue(searchTerm);
     // console.log("search", searchTerm);
+
+    for (var i = 0; i < localStorage.length; ++i) {
+      const d = localStorage.getItem(localStorage.key(i));
+      const data1 = JSON.parse(d);
+      if (searchTerm == data1.title) {
+        let path = `/issue-details/${localStorage.key(i)}`;
+        navigate(path);
+      }
+    }
   };
   const formValuesJson = { ...localStorage };
 
