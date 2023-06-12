@@ -1,9 +1,7 @@
 import { Box } from "@mui/material";
 import Header from "../components/Header";
 import Chart from "../components/Chart";
-// import IssueCard from "../components/IssueCard";
-import Details from "./Details";
-// import Card from "../components/Card";
+import PriorityCard from "../components/PriorityCard";
 
 const Dashboard = () => {
   return (
@@ -11,16 +9,12 @@ const Dashboard = () => {
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="Dashboard" />
       </Box>
-      <Box height="20px" width="1500px" m="230px" marginTop="80px">
+      <Box height="5px" width="1550px" m="230px" marginTop="80px">
         <Chart />
       </Box>
-      {/* <IssueCard title="Card Title" body="" /> */}
-      <Box m="300px" marginTop="500px">
-        <Details />
+      <Box marginTop="400px" width="50px" marginLeft={95}>
+        <PriorityCard />
       </Box>
-      {/* <Box>
-        <Card title="Heading1" />
-      </Box> */}
     </Box>
   );
 };

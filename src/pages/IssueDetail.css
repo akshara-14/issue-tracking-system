@@ -1,0 +1,20 @@
+.container {
+  background: #e3dcdc;
+  height: auto;
+  width: 1000px;
+  position: relative;
+  left: 500px;
+  top: 100px;
+}
+
+.card-title {
+  position: relative;
+
+  color: #1c2237;
+}
+
+.card-body {
+  text-align: left;
+  padding: 8px;
+  font-size: large;
+}
