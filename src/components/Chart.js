@@ -12,13 +12,28 @@ class Chart extends Component {
 
     chart.paddingRight = 20;
 
+    const formValuesJson = { ...localStorage };
+    let issues = Object.values(formValuesJson);
+
     let data = [];
-    let visits = 10;
-    for (let i = 1; i < 366; i++) {
-      visits += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
+    let visits = 0;
+    let time = [];
+    issues.map((val) => {
+      const a = JSON.parse(val).timestamp;
+      const b = a.slice(8, 10);
+      time.push(b);
+    });
+    console.log(time);
+    time.sort(function (a, b) {
+      return a - b;
+    });
+
+    time.forEach(myFunction);
+    function myFunction(value) {
+      visits++;
       data.push({
-        date: new Date(2018, 0, i),
-        name: "name" + i,
+        date: new Date(2023, 5, value),
+        name: "name" + value,
         value: visits,
       });
     }

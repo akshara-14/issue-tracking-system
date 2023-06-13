@@ -23,13 +23,13 @@ const initialValues = {
   description: "",
   storypoints: "",
   attachment: "",
-  // id: v4(),
 };
 
 const Create = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
   const handleFormSubmit = (values, { resetForm }) => {
-    console.log(values);
+    values.timestamp = new Date();
+    // console.log(values);
     const id = v4();
     const jsonData = JSON.stringify(values, null, 2);
     localStorage.setItem(id, jsonData);
