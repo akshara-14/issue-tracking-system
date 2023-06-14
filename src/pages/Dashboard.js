@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
-import Header from "../components/Header";
-import Chart from "../components/Chart";
-import PriorityCard from "../components/PriorityCard";
+import Header from "../components/Header/Header";
+import Chart from "../components/Chart/Chart";
+import PriorityCard from "../components/PriorityCard/PriorityCard";
 
 const Dashboard = () => {
   return (

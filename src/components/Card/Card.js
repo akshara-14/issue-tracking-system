@@ -3,11 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 function Card({ data }) {
   let navigate = useNavigate();
+
+  // routing of cards to their respective details page
   const routeChange = () => {
     for (var i = 0; i < localStorage.length; ++i) {
       const d = localStorage.getItem(localStorage.key(i));
       const data1 = JSON.parse(d);
-      if (data.title == data1.title) {
+      if (data.title === data1.title) {
         let path = `/issue-details/${localStorage.key(i)}`;
         navigate(path);
       }

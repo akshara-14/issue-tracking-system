@@ -1,14 +1,18 @@
 import "./IssueDetail.css";
-// import { v4 } from "uuid";
 import { useParams } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const IssueDetail = () => {
   let { id } = useParams();
   console.log(id);
-  // console.log(localStorage.getItem(id));
-
+  let navigate = useNavigate();
   const data = JSON.parse(localStorage.getItem(id));
-  console.log(data);
+  // console.log(data);
+  const Delete = () => {
+    localStorage.removeItem(id);
+    let path = `/issues`;
+    navigate(path);
+  };
   return (
     <div className="container">
       <div className="card-title">
@@ -84,9 +88,9 @@ const IssueDetail = () => {
           Attachment : <b>{data.attachment}</b>
         </p>
       </div>
-      {/* <div className="btn">
-        <button>View More</button>
-      </div> */}
+      <div className="btn">
+        <button onClick={Delete}>Delete Issue</button>
+      </div>
     </div>
   );
 };

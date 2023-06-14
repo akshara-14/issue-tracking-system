@@ -3,20 +3,19 @@ import "./IssueCard.css";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import _ from "lodash";
 import { v4 } from "uuid";
-import Card from "./Card";
-
-// const item1 = {
-//   id: v4(),
-//   name: "Fix Bug",
-// };
+import Card from "../Card/Card";
 
 function IssueCard() {
+  // retrieving data from local storage
   const formValuesJson = { ...localStorage };
   let issues = Object.values(formValuesJson);
 
+  //  creating aarays
   var toDoArr = [];
   var inProgArr = [];
   var doneArr = [];
+
+  // pushing issues in the arrays according to their status
   issues.map((val) => {
     if (JSON.parse(val).status === "In Progress") {
       inProgArr.push({
@@ -114,9 +113,6 @@ function IssueCard() {
                                   ref={provided.innerRef}
                                   {...provided.draggableProps}
                                   {...provided.dragHandleProps}
-                                  // {...console.log({
-                                  //   ...provided.draggableProps,
-                                  // })}
                                 >
                                   {el.component}
                                 </div>

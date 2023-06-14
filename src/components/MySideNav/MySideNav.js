@@ -1,10 +1,4 @@
-import SideNav, {
-  Toggle,
-  NavItem,
-  NavIcon,
-  NavText,
-} from "@trendmicro/react-sidenav";
-
+import SideNav, { NavItem, NavText } from "@trendmicro/react-sidenav";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 import "./MySideNav.css";
 import { useNavigate } from "react-router-dom";
@@ -19,20 +13,16 @@ function MySideNav() {
       }}
       className="mysidenav"
     >
-      {/* <SideNav.Toggle /> */}
       <SideNav.Nav defaultSelected="">
         <NavItem eventKey="">
-          {/* <NavIcon></NavIcon> */}
           <NavText>Dashboard</NavText>
         </NavItem>
 
         <NavItem eventKey="issues">
-          {/* <NavIcon></NavIcon> */}
           <NavText className="text">Issue List</NavText>
         </NavItem>
 
         <NavItem eventKey="create">
-          {/* <NavIcon></NavIcon> */}
           <NavText>Create Issue</NavText>
         </NavItem>
       </SideNav.Nav>

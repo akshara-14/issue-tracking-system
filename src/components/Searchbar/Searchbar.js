@@ -16,17 +16,19 @@ const Searchbar = () => {
 
   const onSearch = (searchTerm) => {
     setValue(searchTerm);
-    // console.log("search", searchTerm);
 
+    // routing to details page
     for (var i = 0; i < localStorage.length; ++i) {
       const d = localStorage.getItem(localStorage.key(i));
       const data1 = JSON.parse(d);
-      if (searchTerm == data1.title) {
+      if (searchTerm === data1.title) {
         let path = `/issue-details/${localStorage.key(i)}`;
         navigate(path);
       }
     }
   };
+
+  // getting data from local storage
   const formValuesJson = { ...localStorage };
 
   let issues = Object.values(formValuesJson);
@@ -50,6 +52,8 @@ const Searchbar = () => {
           <SearchIcon />
         </IconButton>
       </Box>
+
+      {/* logic to search issue titles */}
       <Box className="dropdown">
         {issues
           .filter((val) => {

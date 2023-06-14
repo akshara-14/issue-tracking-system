@@ -1,12 +1,13 @@
 import "./App.css";
-import MySideNav from "./components/MySideNav";
+import MySideNav from "./components/MySideNav/MySideNav";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Issues from "./pages/Issues";
 import Create from "./pages/Create";
-import Topbar from "./components/Topbar";
-import Login from "./components/Login";
-import IssueDetail from "./pages/IssueDetail";
+import Topbar from "./components/Topbar/Topbar";
+// import Login from "./components/Login";
+import IssueDetail from "./components/IssueDetail/IssueDetail";
+
 function App() {
   return (
     <div className="App">

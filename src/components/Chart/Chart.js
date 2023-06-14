@@ -18,16 +18,20 @@ class Chart extends Component {
     let data = [];
     let visits = 0;
     let time = [];
+
+    // creating an array of dates on which issues are pushed
     issues.map((val) => {
       const a = JSON.parse(val).timestamp;
       const b = a.slice(8, 10);
       time.push(b);
     });
-    console.log(time);
+
+    // sorting the array
     time.sort(function (a, b) {
       return a - b;
     });
 
+    // loop to show data in charts
     time.forEach(myFunction);
     function myFunction(value) {
       visits++;

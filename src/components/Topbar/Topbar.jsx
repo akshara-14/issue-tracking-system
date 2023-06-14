@@ -1,20 +1,16 @@
 import { useState } from "react";
 import { Box, IconButton } from "@mui/material";
-// import InputBase from "@mui/material/InputBase";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-// import SearchIcon from "@mui/icons-material/Search";
-import logo from "../assets/Logo.svg";
-import Searchbar from "./Searchbar";
+import logo from "../../assets/Logo.svg";
+import Searchbar from "../Searchbar/Searchbar";
 import Logout from "@mui/icons-material/Logout";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import MenuItem from "@mui/material/MenuItem";
-// import Menu from "@mui/material/Menu";
 
 const Topbar = () => {
   const [open, setOpen] = useState(false);
   const handleClick = () => {
-    // localStorage.clear();
     window.location.reload();
   };
   return (
@@ -25,8 +21,6 @@ const Topbar = () => {
       p={2}
       marginLeft={170}
       height={30}
-      // boxShadow={4}
-      // width={100}
     >
       {/* Logo */}
       <Box
@@ -57,8 +51,8 @@ const Topbar = () => {
           <NotificationsOutlinedIcon />
         </IconButton>
 
-        <IconButton>
-          <PersonOutlinedIcon onClick={() => setOpen(!open)} />
+        <IconButton onClick={() => setOpen(!open)}>
+          <PersonOutlinedIcon />
         </IconButton>
       </Box>
       {open && (
