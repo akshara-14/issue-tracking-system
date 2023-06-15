@@ -1,4 +1,5 @@
 {
+  "homepage": "http://akshara-14.github.io/issue-tracking-system",
   "name": "bira-assignment",
   "version": "0.1.0",
   "private": true,
@@ -41,6 +42,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d buils",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -64,6 +67,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "jest": "^27.5.1"
   }
 }
