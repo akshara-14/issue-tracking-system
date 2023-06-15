@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/issue-tracking-system/static/css/main.63f8f114.css",
+    "main.js": "/issue-tracking-system/static/js/main.9ecb3502.js",
+    "pdfmake.js": "/issue-tracking-system/static/js/pdfmake.8868592f.chunk.js",
+    "canvg.js": "/issue-tracking-system/static/js/canvg.98a66a13.chunk.js",
+    "xlsx.js": "/issue-tracking-system/static/js/xlsx.441019c1.chunk.js",
+    "static/js/787.26a26dc8.chunk.js": "/issue-tracking-system/static/js/787.26a26dc8.chunk.js",
+    "static/media/Logo.svg": "/issue-tracking-system/static/media/Logo.5575227af55142a93cd7b4ad023016da.svg",
+    "index.html": "/issue-tracking-system/index.html",
+    "main.63f8f114.css.map": "/issue-tracking-system/static/css/main.63f8f114.css.map",
+    "main.9ecb3502.js.map": "/issue-tracking-system/static/js/main.9ecb3502.js.map",
+    "pdfmake.8868592f.chunk.js.map": "/issue-tracking-system/static/js/pdfmake.8868592f.chunk.js.map",
+    "canvg.98a66a13.chunk.js.map": "/issue-tracking-system/static/js/canvg.98a66a13.chunk.js.map",
+    "xlsx.441019c1.chunk.js.map": "/issue-tracking-system/static/js/xlsx.441019c1.chunk.js.map",
+    "787.26a26dc8.chunk.js.map": "/issue-tracking-system/static/js/787.26a26dc8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.63f8f114.css",
+    "static/js/main.9ecb3502.js"
+  ]
+}
