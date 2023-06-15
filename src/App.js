@@ -14,7 +14,7 @@ function App() {
       <Router>
         <MySideNav />
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/issue-tracking-system" element={<Dashboard />} />
           <Route path="/issues" element={<Issues />} />
           <Route path="/create" element={<Create />} />
           <Route path="/issue-details/:id" element={<IssueDetail />} />

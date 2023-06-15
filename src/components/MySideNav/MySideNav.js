@@ -14,7 +14,7 @@ function MySideNav() {
       className="mysidenav"
     >
       <SideNav.Nav defaultSelected="">
-        <NavItem eventKey="">
+        <NavItem eventKey="issue-tracking-system">
           <NavText>Dashboard</NavText>
         </NavItem>
 
